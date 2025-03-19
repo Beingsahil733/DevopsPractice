@@ -1,0 +1,28 @@
+---
+- name: deploy a coffee webserver
+  become: yes
+  hosts: all
+  tasks:
+    - name: website deployment
+      ansible.builtin.apt: 
+        name: nginx
+        state: present
+    - name: check whether nginx has started
+      ansible.builtin.systemd_service:
+        name: nginx
+        state: started
+        enabled: yes
+    - name: install pack unzip
+      ansible.builtin.apt:
+        name: unzip
+        state: present
+    - name: deploying the website
+      ansible.builtin.unarchive:
+        src: https://www.free-css.com/assets/files/free-css-templates/download/page290/wave-cafe.zip
+        dest: /tmp
+        remote_src: yes
+    - name: copy the folder into coffee folder
+      ansible.builtin.copy:
+        src: /tmp/2121_wave_cafe/
+        dest: /var/www/html/coffee
+        remote_src: yes
