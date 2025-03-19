@@ -1,0 +1,10 @@
+---
+- name: installing apache2 webserver
+  hosts: all
+  become: yes
+  tasks:
+    -name: apache2 deploy
+    ansible.builtin.apt:
+      name: apache2
+      update_cache: yes
+      state: present
