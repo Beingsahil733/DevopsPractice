@@ -1,0 +1,15 @@
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.39/bin/apache-tomcat-10.1.39.tar.gz
+sudo tar -xf apache-tomcat-10.1.39.tar.gz -C /opt/tomcat
+sudo chown -R tomcat: /opt/tomcat
+sudo chmod +x /opt/tomcat/bin/*.sh
+sudo nano /etc/systemd/system/tomcat.service
+sudo systemctl daemon-reload
+sudo systemctl start tomcat
+sudo systemctl enable tomcat
+
+http://<ip>:8080
+
+{tomcat runs on port 8080}
