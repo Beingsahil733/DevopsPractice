@@ -2,23 +2,29 @@
 - name: deploy a coffee webserver
   become: yes
   hosts: all
+  vars:
+    download_url: https://www.free-css.com/assets/files/free-css-templates/download/page290/wave-cafe.zip
+    unzip_package_name: unzip
   tasks:
+    - name: print a package name
+      ansible.builtin.debug:
+        msg: "web_package_name name is {{ web_package_name  }}" 
     - name: website deployment
       ansible.builtin.apt: 
-        name: nginx
+        name: "{{ web_package_name }}"
         state: present
-    - name: check whether nginx has started
+    - name: check whether web_package_name has started
       ansible.builtin.systemd_service:
-        name: nginx
+        name: "{{ web_package_name }}"
         state: started
         enabled: yes
     - name: install pack unzip
       ansible.builtin.apt:
-        name: unzip
+        name: "{{ unzip_package_name }}"
         state: present
     - name: deploying the website
       ansible.builtin.unarchive:
-        src: https://www.free-css.com/assets/files/free-css-templates/download/page290/wave-cafe.zip
+        src: "{{ download_url }}"
         dest: /tmp
         remote_src: yes
     - name: copy the folder into coffee folder
@@ -26,3 +32,9 @@
         src: /tmp/2121_wave_cafe/
         dest: /var/www/html/coffee
         remote_src: yes
+
+
+
+
+
+
