@@ -13,3 +13,13 @@ sudo systemctl enable tomcat
 http://<ip>:8080
 
 {tomcat runs on port 8080}
+
+
+    -name: adding group tomcat
+      ansible.builtin.group:
+        name:tomcat
+    - name: setting up user tomcat
+      ansible.builtin.user:
+        name: tomcat
+        system: true
+        create_home: true

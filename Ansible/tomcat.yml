@@ -1,0 +1,29 @@
+---
+- name: Installing tomcat
+  become: yes       
+  hosts: all
+  tasks:
+    - name: Installing update package
+      ansible.builtin.apt:
+        name: openjdk-17-jdk
+        update_cache: yes
+        state: present
+    - name: adding Tomcat usergroup
+      ansible.builtin.group:
+        name: Tomcat
+        state: present
+    - name: adding user Tomcat
+      ansible.builtin.user:
+        system: yes
+        create_home: true
+        name: Tomcat
+        home: /opt/tomcat
+        group: Tomcat
+        shell: /bin/false
+    - name: installing tomcat 
+      ansible.builtin.unarchive:
+        src: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.39/bin/apache-tomcat-10.1.39.tar.gz
+        dest: /opt/tomcat
+
+      
+    
