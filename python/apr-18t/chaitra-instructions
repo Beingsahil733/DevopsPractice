@@ -12,7 +12,7 @@ now c = a + b
 say c 
 
 
-# instruct chaitra to calculatemultiple a any number but she knows only '+ -' 
+# instruct chaitra to calculate multiple a any number but she knows only '+ -' 
 hello chaitra
 remember 10 as a number
 now to multiple , add the same number multiple times to get multiple 1 time
