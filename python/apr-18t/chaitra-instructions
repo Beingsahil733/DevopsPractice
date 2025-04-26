@@ -1,0 +1,26 @@
+# instruct chaitra to print a number 10
+hello chaitra
+remember 10 as number
+say number
+
+# instruct chaitra to add 2 numbers and print the addition
+hello chaitra
+remember + as addition
+remember 20 as a
+remember 30 as b
+now c = a + b
+say c 
+
+
+# instruct chaitra to calculatemultiple a any number but she knows only '+ -' 
+hello chaitra
+remember 10 as a number
+now to multiple , add the same number multiple times to get multiple 1 time
+number = number+number+number
+total = number
+say total 
+
+# instruct chaitra to calculate the even number
+remember 6 as number
+calculate number % 2 and remember as result
+say even if result == 0
