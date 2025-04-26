@@ -1,17 +1,4 @@
-number = 12
-index = 2 
-is_prime = True  # Initialize the variable
-while index < number:
-    if number % index == 0:
-        is_prime = False
-        break
-    index = index + 1
-    print(is_prime)
-
-    
-    
-        
-      
-      
- 
-
+number = 70
+sum = 0
+while number > 2:
+    if number
