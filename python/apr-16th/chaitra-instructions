@@ -1,0 +1,39 @@
+#problem-1
+#solving the problem of area of circle
+#formula = pie*r*r
+#solution
+hello chaitra
+pi = 3.14
+radius = 3.14
+result = pi * radius * radius
+say result
+
+# Problem: Lets solve the problem of simple intrest
+# forumla p * t * r / 100
+hello chaitra
+remember 1000 as principle
+principle = 1000
+remember 24 as interest
+interest = 24
+remember 1 as time
+time = 1
+
+total = (interest * time * principle) / 100
+say total
+
+#Problem: Lets solve the problem of Converting celcius into farnhiet
+# F=(°C×1.8)+32
+hello chaitra
+remember f as farnhiet
+remember c as celcius
+F = 32 * 1.8 + 32
+say F
+
+
+# Problem Ask chaitra to say number 5 times
+hello chaitra
+remember 5 as number
+repeat number 5 times and remember count of the 
+# loops
+repeat until number
+
