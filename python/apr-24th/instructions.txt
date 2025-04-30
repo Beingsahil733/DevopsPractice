@@ -1,0 +1,4 @@
+# Smallest multiple
+
+hello chaitra
+remember number = 20
