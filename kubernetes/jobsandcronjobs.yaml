@@ -1,0 +1,20 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+spec:
+  schedule: '*/2 * * * *'
+  jobTemplate: 
+    metadata:
+      name: simple-job
+    spec:
+      template:
+        metadata:
+          name: dummy-po
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: sample-po
+              image: nginx
+              command:
+                - sleep
+                - 60s
