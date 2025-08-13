@@ -1,0 +1,8 @@
+apiVersion: v1 
+kind: ConfigMap
+metadata:
+  name: sahil-cm-vol
+data:
+  name: "sahil"
+  fname: "Ahamad Basha"
+  mname: "Sajidha"

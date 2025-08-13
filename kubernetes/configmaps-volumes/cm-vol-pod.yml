@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sahil-pod
+  labels:
+    name: c-m
+spec:
+  containers:
+    - name: sahil-pod
+      image: nginx
+      command:
+        - apt
+        - update
+      envFrom:
+        - configMapRef:
+            name: sahil-cm-vol
+      volumeMounts:
+        - name: my-vol
+          mountPath: /sahildetails
+      # resources:
+      #   requests:
+      #     memory: "64Mi"
+      #     cpu: "250m"
+      #   limits:
+      #     memory: "128Mi"
+      #     cpu: "500m"
+  volumes:
+    - name: my-vol
+      configMap: 
+        name: sahil-cm-vol 
+        
+
