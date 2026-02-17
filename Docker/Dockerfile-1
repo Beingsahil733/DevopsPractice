@@ -1,0 +1,7 @@
+FROM eclipse-temurin:17-jdk
+ADD https://referenceappslt.s3.ap-south-1.amazonaws.com/spring-petclinic-3.3.0-SNAPSHOT.jar /spring-petclinic-3.3.0-SNAPSHOT.jar 
+RUN mkdir sahil
+ENTRYPOINT ["java","-jar","spring-petclinic-3.3.0-SNAPSHOT.jar"]
+EXPOSE 8080
+
+

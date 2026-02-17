@@ -1,0 +1,10 @@
+---
+- name: Installing apache2
+  hosts: all
+  become: yes
+  tasks:
+    - name: installing apachemaven2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+        update_cache: true
